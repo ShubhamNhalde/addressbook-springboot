@@ -1,5 +1,11 @@
 package com.bridgelabz.addressbook.dto;
 
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
 public  class AddressBookDTO {
     public String firstName;
     public String lastName;

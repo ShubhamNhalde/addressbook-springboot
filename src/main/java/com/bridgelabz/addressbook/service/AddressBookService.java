@@ -8,8 +8,12 @@ import java.util.List;
 public interface AddressBookService {
 
     List<AddressBookData> getAddressBookData();
-    AddressBookData getAddressBookById(int Id);
+
+    AddressBookData getAddressBookById(int personId);
+
     AddressBookData addNewContact(AddressBookDTO addressBookDTO);
+
     AddressBookData updateContact();
+
     void deleteContact();
 }
