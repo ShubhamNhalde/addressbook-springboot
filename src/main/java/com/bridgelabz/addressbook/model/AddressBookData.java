@@ -3,9 +3,13 @@ package com.bridgelabz.addressbook.model;
 
 import com.bridgelabz.addressbook.dto.AddressBookDTO;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 
+@Getter
+@Setter
 @Entity
 @Table(name = "addressbooksys")
 public @Data class AddressBookData {

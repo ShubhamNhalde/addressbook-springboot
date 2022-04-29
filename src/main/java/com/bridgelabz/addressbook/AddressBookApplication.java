@@ -1,14 +1,17 @@
 package com.bridgelabz.addressbook;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+@Slf4j
 @SpringBootApplication
 public class AddressBookApplication {
 
     public static void main(String[] args) {
-        System.out.println("Welcome to Address Book App");
+
         SpringApplication.run(AddressBookApplication.class, args);
+        log.info("Welcome to Addressbook");
     }
 
 }

@@ -1,13 +1,26 @@
 package com.bridgelabz.addressbook.dto;
 
 
-public class AddressBookDTO {
+import lombok.Data;
+
+import javax.validation.constraints.Pattern;
+
+public @Data class AddressBookDTO {
+
+    @Pattern(regexp = "^[A-Z]{1}[a-zA-Z\\s]{2,}$", message = "Employee firstName Invalid")
     public String firstName;
+
+    @Pattern(regexp = "^[A-Z]{1}[a-zA-Z\\s]{2,}$", message = "Employee lastName Invalid")
     public String lastName;
     public String address;
+
     public String city;
     public String state;
+
+    @Pattern(regexp = "^[0-9]{6}$", message = "Invalid Zip Number.Try Again")
     public String zipcode;
+
+    //@Pattern(regexp = "^[0-9]{10}$", message = "Phone Number is Invalid")
     public long mobile_no;
 
     public AddressBookDTO(String firstName, String lastName, String address, String city, String state, String zipcode, long mobile_no) {
