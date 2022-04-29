@@ -2,15 +2,21 @@ package com.bridgelabz.addressbook.model;
 
 
 import com.bridgelabz.addressbook.dto.AddressBookDTO;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter
-@Setter
-public class AddressBookData {
+import javax.persistence.*;
 
-    private int id;
+@Entity
+@Table(name = "addressbooksys")
+public @Data class AddressBookData {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "person_id")
+    private Long id;
+    @Column(name = "first_name")
     private String firstName;
+    @Column(name = "last_name")
     private String lastName;
     private String address;
     private String city;
@@ -19,7 +25,7 @@ public class AddressBookData {
     private long mobile_no;
 
 
-    public AddressBookData(int id, AddressBookDTO addressBookDTO) {
+    public AddressBookData(Long id, AddressBookDTO addressBookDTO) {
         this.id = id;
         this.firstName = addressBookDTO.firstName;
         this.lastName = addressBookDTO.lastName;
@@ -28,5 +34,32 @@ public class AddressBookData {
         this.state = addressBookDTO.state;
         this.zipcode = addressBookDTO.zipcode;
         this.mobile_no = addressBookDTO.mobile_no;
+    }
+
+    public AddressBookData() {
+
+    }
+
+    public AddressBookData(AddressBookDTO addressBookDTO) {
+        this.id = id;
+        this.firstName = addressBookDTO.firstName;
+        this.lastName = addressBookDTO.lastName;
+        this.address = addressBookDTO.address;
+        this.city = addressBookDTO.city;
+        this.state = addressBookDTO.state;
+        this.zipcode = addressBookDTO.zipcode;
+        this.mobile_no = addressBookDTO.mobile_no;
+    }
+
+    public void updateContact(AddressBookDTO addressBookDTO) {
+        this.id = id;
+        this.firstName = addressBookDTO.firstName;
+        this.lastName = addressBookDTO.lastName;
+        this.address = addressBookDTO.address;
+        this.city = addressBookDTO.city;
+        this.state = addressBookDTO.state;
+        this.zipcode = addressBookDTO.zipcode;
+        this.mobile_no = addressBookDTO.mobile_no;
+
     }
 }
