@@ -1,19 +1,19 @@
-package com.bridgelabz.addressbook.service;
+package com.bridgelabz.addressbook2.service;
 
-import com.bridgelabz.addressbook.dto.AddressBookDTO;
-import com.bridgelabz.addressbook.model.AddressBookData;
+import com.bridgelabz.addressbook2.dto.AddressBookDTO;
+import com.bridgelabz.addressbook2.model.AddressBookData;
 
 import java.util.List;
 
-public interface AddressBookService {
+public interface IAddressBookServices {
 
-    List<AddressBookData> getAddressBookData();
+    List<AddressBookData> getEmployeePayrollData();
 
-    AddressBookData getAddressBookById(int personId);
+    AddressBookData getAddressBookDataById(int personId);
 
-    AddressBookData addNewContact(AddressBookDTO addressBookDTO);
+    AddressBookData createAddressBookData(AddressBookDTO AddressBookDTO);
 
-    AddressBookData updateContact();
+    AddressBookData updateAddressBookData(int personId, AddressBookDTO AddressBookDTO);
 
-    void deleteContact();
+    void deleteAddressBookData(int personId);
 }
