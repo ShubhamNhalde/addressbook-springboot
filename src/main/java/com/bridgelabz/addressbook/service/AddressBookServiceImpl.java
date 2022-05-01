@@ -1,47 +1,46 @@
-package com.bridgelabz.addressbook.service;
+package com.bridgelabz.addressbook2.service;
 
-import com.bridgelabz.addressbook.dto.AddressBookDTO;
-import com.bridgelabz.addressbook.model.AddressBookData;
+
+import com.bridgelabz.addressbook2.dto.AddressBookDTO;
+import com.bridgelabz.addressbook2.model.AddressBookData;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class AddressBookServiceImpl implements AddressBookService {
+public class AddressBookServices implements IAddressBookServices {
 
-    private List<AddressBookData> addressBookList = new ArrayList<>();
+    List<AddressBookData> addressbookDataList = new ArrayList();
 
     @Override
-    public List<AddressBookData> getAddressBookData() {
-        List<AddressBookData> contactList = new ArrayList<>();
-        contactList.add(new AddressBookData(1, new AddressBookDTO("Arun", "Sharma", "karve-Nagar", "Pune", "Maharashtra", "411052", 8149498627L)));
-        return addressBookList;
-    }
-
-
-    public AddressBookData getAddressBookById(int personId) {
-        AddressBookData contactList = null;
-        contactList = new AddressBookData(1, new AddressBookDTO("Arun", "Sharma", "Karve-Nagar", "Pune", "Maharashtra", "Maharashtra", 8149498627L));
-        return contactList;
+    public List<AddressBookData> getEmployeePayrollData() {
+        return addressbookDataList;
     }
 
     @Override
-    public AddressBookData addNewContact(AddressBookDTO addressBookDTO) {
-        AddressBookData addressBookData = null;
-        addressBookData = new AddressBookData(1, addressBookDTO);
+    public AddressBookData getAddressBookDataById(int personId) {
+        return addressbookDataList.get(personId - 1);
+    }
+
+
+    @Override
+    public AddressBookData createAddressBookData(AddressBookDTO addressBookDTO) {
+        AddressBookData addressBookData = new AddressBookData(addressbookDataList.size() + 1, addressBookDTO);
+        addressbookDataList.add(addressBookData);
         return addressBookData;
     }
 
     @Override
-    public AddressBookData updateContact() {
-        return null;
+    public AddressBookData updateAddressBookData(int personId, AddressBookDTO AddressBookDTO) {
+        AddressBookData addressBookData = this.getAddressBookDataById(personId - 1);
+        addressBookData.updateAddressBookData(AddressBookDTO);
+        return addressBookData;
     }
 
     @Override
-    public void deleteContact() {
-
+    public void deleteAddressBookData(int personId) {
+        addressbookDataList.remove(personId - 1);
     }
-
-
 }
+
