@@ -7,13 +7,14 @@ import java.util.List;
 
 public interface AddressBookService {
 
-    List<AddressBookData> getAddressBookData();
+    String createAddressBookData(AddressBookDTO addressBookDTO);
 
-    AddressBookData getAddressBookById(Long personId);
+    List<AddressBookData> getAddressBookDataByToken(String token);
 
-    AddressBookData addNewContact(AddressBookDTO addressBookDTO);
+    AddressBookData getRecordByToken(String token);
 
-    void deleteContact(long personId);
+    AddressBookData updateRecordByToken(String token, AddressBookDTO addressBookDTO);
 
-    AddressBookData updateContact(long personId, AddressBookDTO addressBookDTO);
+    AddressBookData deleteRecordByToken(String token);
 }
+

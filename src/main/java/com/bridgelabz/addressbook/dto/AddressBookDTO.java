@@ -13,7 +13,7 @@ public @Data class AddressBookDTO {
     @Pattern(regexp = "^[A-Z]{1}[a-zA-Z\\s]{2,}$", message = "Employee lastName Invalid")
     public String lastName;
     public String address;
-
+    public String email;
     public String city;
     public String state;
 
