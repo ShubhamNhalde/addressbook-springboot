@@ -1,9 +1,8 @@
-package com.bridgelabz.addressbook.dto;
+package com.bridgelabz.addressbook2.dto;
 
 import lombok.Data;
 
 public @Data class ResponseDTO {
-
     private String message;
     private Object data;
 
