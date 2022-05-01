@@ -1,40 +1,25 @@
-package com.bridgelabz.addressbook.dto;
+package com.bridgelabz.addressbook2.dto;
 
+import lombok.Data;
 
-import lombok.Getter;
-import lombok.Setter;
+public @Data class AddressBookDTO {
+    public String first_name;
 
-@Getter
-@Setter
-public  class AddressBookDTO {
-    public String firstName;
-    public String lastName;
+    public String last_name;
+
     public String address;
-    public String city;
-    public String state;
-    public String zipcode;
-    public long mobile_no;
 
-    public AddressBookDTO(String firstName, String lastName, String address, String city, String state, String zipcode, long mobile_no) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.address = address;
-        this.city = city;
-        this.state = state;
-        this.zipcode = zipcode;
-        this.mobile_no = mobile_no;
-    }
+    public String phone_no;
+
+    public String city;
+
+    public String state;
+
+    public String zip_code;
 
     @Override
     public String toString() {
-        return "AddressBookDTO{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", address='" + address + '\'' +
-                ", city='" + city + '\'' +
-                ", state='" + state + '\'' +
-                ", zipcode='" + zipcode + '\'' +
-                ", mobile_no=" + mobile_no +
-                '}';
+        return "AddressBookDTO [first_name=" + first_name + ", last_name=" + last_name + ", address=" + address
+                + ", phone_no=" + phone_no + ", city=" + city + ", state=" + state + ", zip_code=" + zip_code + "]";
     }
 }
