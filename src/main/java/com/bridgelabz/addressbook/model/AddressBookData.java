@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 
 @Getter
 @Setter
@@ -26,7 +27,9 @@ public @Data class AddressBookData {
     private String email;
     private String city;
     private String state;
+
     private String zipcode;
+
     private long mobile_no;
 
 
